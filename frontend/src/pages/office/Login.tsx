@@ -79,12 +79,6 @@ const OfficeLogin = () => {
           </Button>
         </form>
 
-        <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
-          <p className="text-sm font-semibold text-blue-900 mb-2">Office Credentials:</p>
-          <p className="text-sm text-blue-800">Email: officeboy@workspace.com</p>
-          <p className="text-sm text-blue-800">Password: password123</p>
-        </div>
-
         <div className="text-center">
           <button
             type="button"
