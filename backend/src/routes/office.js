@@ -6,24 +6,20 @@ import { getAllAttendance, getTodayAttendance, checkIn, checkOut } from '../cont
 
 const router = express.Router();
 
-// NO AUTHENTICATION REQUIRED - Public routes for office dashboard
-
-// Customer routes
 router.get('/customers', getAllCustomers);
 
-// Order routes
+
 router.get('/orders', getAllOrders);
 router.get('/orders/today', getTodayOrders);
 router.post('/orders', createOrder);
 router.put('/orders/:id/complete', completeOrder);
 
-// Guest routes
 router.get('/guests', getAllGuests);
 router.get('/guests/today', getTodayGuests);
 router.post('/guests', createGuest);
 router.put('/guests/:id/complete', completeGuest);
 
-// Attendance routes
+
 router.get('/attendance', getAllAttendance);
 router.get('/attendance/today', getTodayAttendance);
 router.post('/attendance/checkin', checkIn);

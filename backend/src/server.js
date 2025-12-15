@@ -3,7 +3,6 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './config/database.js';
 
-// Routes
 import authRoutes from './routes/auth.js';
 import customerRoutes from './routes/customer.js';
 import orderRoutes from './routes/order.js';
@@ -18,7 +17,6 @@ const app = express();
 
 connectDB();
 
-// CORS Configuration
 const allowedOrigins = process.env.ALLOWED_ORIGINS
   ? process.env.ALLOWED_ORIGINS.split(',')
   : ['http://localhost:5173'];

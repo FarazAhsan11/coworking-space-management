@@ -34,7 +34,6 @@ api.interceptors.response.use(
   }
 );
 
-// Auth API
 export const authAPI = {
   login: (email: string, password: string) =>
     api.post('/auth/login', { email, password }),
@@ -42,7 +41,6 @@ export const authAPI = {
   getMe: () => api.get('/auth/me'),
 };
 
-// Customer API
 export const customerAPI = {
   getAll: () => api.get('/customers'),
   getOne: (id: string) => api.get(`/customers/${id}`),
