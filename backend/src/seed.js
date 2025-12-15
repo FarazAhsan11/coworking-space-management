@@ -8,11 +8,9 @@ dotenv.config();
 const seedCustomers = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI);
-    console.log('MongoDB Connected for seeding...');
 
     
     await Customer.deleteMany({});
-    console.log('Cleared existing customers');
 
     
     const customers = await Customer.create([
@@ -43,9 +41,7 @@ const seedCustomers = async () => {
     ]);
 
     console.log('Demo customers created:');
-    customers.forEach((c) => {
-      console.log(`- ${c.name} (${c.email}) - Cabin ${c.cabinNumber}`);
-    });
+    
     process.exit(0);
   } catch (error) {
     console.error('Error seeding database:', error);

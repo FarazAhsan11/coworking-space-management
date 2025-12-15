@@ -46,10 +46,8 @@ export const createOrder = async (req, res) => {
   
   try {
     const { customerId, type, addedBy } = req.body;
-    console.log('Extracted:', { customerId, type, addedBy });
 
     const customer = await Customer.findById(customerId);
-    console.log('Customer found:', customer ? customer.name : 'Not found');
 
     if (!customer) {
       return res.status(404).json({
@@ -58,7 +56,6 @@ export const createOrder = async (req, res) => {
       });
     }
 
-    console.log('Customer todayChaiCoffeeUsed:', customer.todayChaiCoffeeUsed);
     if (customer.todayChaiCoffeeUsed >= 1) {
       return res.status(400).json({
         success: false,
@@ -76,14 +73,12 @@ export const createOrder = async (req, res) => {
 
     customer.todayChaiCoffeeUsed += 1;
     await customer.save();
-    console.log('Customer updated');
 
     res.status(201).json({
       success: true,
       order
     });
   } catch (error) {
-    console.error('Error stack:', error.stack);
     res.status(500).json({
       success: false,
       message: 'Server error',

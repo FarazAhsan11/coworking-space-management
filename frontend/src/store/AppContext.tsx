@@ -48,7 +48,6 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
       const response = await authAPI.getMe();
       const customer = response.data.customer;
       
-      console.log('User authenticated:', customer.name);
       dispatch({ type: "LOGIN", payload: customer });
       
       // Fetch dashboard data after successful auth
@@ -69,7 +68,6 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
       const { token, customer } = response.data;
       
       localStorage.setItem("token", token);
-      console.log('Login successful:', customer.name);
       dispatch({ type: "LOGIN", payload: customer });
       
       await fetchDashboardDataSilent();
@@ -92,7 +90,6 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
 
   const fetchDashboardDataSilent = async () => {
     try {
-      console.log('Fetching customer dashboard data...');
       const [customersRes, ordersRes, guestsRes, attendanceRes] = await Promise.all([
         customerAPI.getAll(),
         orderAPI.getToday(),

@@ -28,7 +28,6 @@ const scheduleDailyReset = () => {
   setTimeout(async () => {
     try {
       await Customer.updateMany({}, { todayChaiCoffeeUsed: 0 });
-      console.log("Daily chai/coffee usage reset completed");
 
       scheduleDailyReset();
     } catch (error) {
