@@ -40,7 +40,6 @@ const OfficeLogin = () => {
     <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 to-indigo-100">
       <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow-xl">
         <div className="text-center">
-          <div className="text-6xl mb-4">🏢</div>
           <h2 className="text-3xl font-bold text-gray-900">Office Boy Portal</h2>
           <p className="mt-2 text-gray-600">Sign in to manage the workspace</p>
         </div>

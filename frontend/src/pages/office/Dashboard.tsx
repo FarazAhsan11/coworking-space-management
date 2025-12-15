@@ -60,10 +60,9 @@ export const Dashboard = () => {
     <div className="min-h-screen bg-gray-50 p-2 sm:p-4">
       <div className="max-w-6xl mx-auto">
         <div className="bg-white rounded-lg shadow p-3 sm:p-4 md:p-6">
-          {/* Header */}
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-4 sm:mb-6">
             <div>
-              <h1 className="text-xl sm:text-2xl font-bold">🏢 Office Boy Dashboard</h1>
+              <h1 className="text-xl sm:text-2xl font-bold">Office Boy Dashboard</h1>
               <p className="text-xs sm:text-sm text-gray-600 mt-1">
                 Manage all orders, guests, and attendance
               </p>
@@ -96,7 +95,6 @@ export const Dashboard = () => {
             </div>
           )}
 
-          {/* Pending Requests */}
           <div className="mb-4 sm:mb-6">
             <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-red-600">
               🔴 PENDING REQUESTS ({pendingCount})
@@ -117,7 +115,6 @@ export const Dashboard = () => {
             </div>
           </div>
 
-          {/* Completed Today */}
           <div className="mb-4 sm:mb-6 border-t pt-4 sm:pt-6">
             <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-green-600">
                COMPLETED TODAY ({completedCount})
@@ -145,14 +142,12 @@ export const Dashboard = () => {
             </div>
           </div>
 
-          {/* Stats */}
           <div className="border-t pt-4 sm:pt-6">
             <StatsCard />
           </div>
         </div>
       </div>
 
-      {/* Modals */}
       {modal === "order" && (
         <ManualOrderModal onClose={() => setModal(null)} />
       )}
